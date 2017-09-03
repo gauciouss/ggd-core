@@ -393,49 +393,13 @@ public interface Constant {
 	
 	public static final String ACCOUNT_NON_AUTH = "無使用權限";
 	public static final String ACCOUTN_PWD_ERROR = "帳號或密碼錯誤";
-	
-	
-	
 	public static final String AUTH = "auth";
 	public static final String AUTH_KEY = "authKey";
-	
 	public static final String SYS_USER = "系統管理者";
-	
-	
 	public static final String CREDENTIALS_FILE_PATH = "CREDENTIALS_FILE_PATH";
-	
-	public static final String ADDR = "通訊地址";
-	public static final String RESIDENCE_ADDR = "戶籍地址";
-	public static final String BILL = "電子對帳單";
-	public static final String PHONE = "電話";
-	public static final String SMS = "簡訊";
-	public static final String EMAIL = "電子郵件";
-	
-	public static final String IMG_FILE_TYPE = ".jpg";
-	public static final String VIDEO_FILE_TYPE = ".mp4";
-	
-	public static final String AP_RESULT = "apResult";
-	
-	
-	
-	public static final String ID_CARD_PIC_1 = "idCardPic1";
-	public static final String ID_CARD_PIC_2 = "idCardPic2";
-	public static final String SEC_CARD_PIC_1 = "secCardPic1";
-	public static final String SEC_CARD_PIC_2 = "secCardPic2";
-	public static final String BANK_BOOK_PIC = "bankBookPic";
-	public static final String SIGNATURE_PIC = "signaturePic";
-	public static final String VIDEO_SCREENSHOT1 = "videoScreenshot1";
-	public static final String VIDEO_SCREENSHOT2 = "videoScreenshot2";
-	public static final String VIDEO_SCREENSHOT3 = "videoScreenshot3";
-	public static final String VIDEO_SCREENSHOT4 = "videoScreenshot4";
-	public static final String VIDEO_SCREENSHOT5 = "videoScreenshot5";
-	public static final String VIDEO_SCREENSHOT6 = "videoScreenshot6";
-	public static final String VIDEO_SCREENSHOT7 = "videoScreenshot7";
-	public static final String FOREIGN_CURRENCY_BANK_BOOK_PIC = "foreignCurrencyBankBookPic";
-
 	public static final String WEB_PATH_HOST = "WEB_PATH_HOST";
-	
 	public static final String ACTION_TYPE = "actionType";
-	
+	public static final String PAGE = "page";
 	public static final String PAGE_SIZE = "pageSize";
+	public static final String DATA_LIST = Constant.class + "_LIST";
 }

@@ -7,6 +7,8 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -40,7 +42,7 @@ public class XML_Config {
 	private Map<String, String> common;
 	
 	@Resource(name="DISPLAY_MAP")
-	private Map<String, String> display;
+	private Map<String, String> display;	
 	
 	@Bean(name={URL_CONFIG})
 	public Config getURL() {
