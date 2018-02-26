@@ -402,4 +402,5 @@ public interface Constant {
 	public static final String PAGE = "page";
 	public static final String PAGE_SIZE = "pageSize";
 	public static final String DATA_LIST = Constant.class + "_LIST";
+	public static final String ACTION_RESULT = Constant.class + "_ACTION_RESULT";
 }
