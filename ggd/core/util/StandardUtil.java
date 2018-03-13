@@ -1,14 +1,23 @@
 package ggd.core.util;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Calendar;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.Base64Utils;
 
 import baytony.util.StringUtil;
 import baytony.util.Util;
@@ -388,4 +397,48 @@ public class StandardUtil {
 			return NewAry;
 		}
 	}
+	
+	
+	public static String readFileToBase64(String file) throws IOException {
+		File f = new File(file);		
+		byte[] bytes  = readFile2Bytes(f);
+		byte[] encoded = org.apache.commons.codec.binary.Base64.encodeBase64(bytes);
+		return new String(encoded);
+	}
+	
+	public static byte[] readFile2Bytes(File f) throws IOException {
+		InputStream is = new FileInputStream(f);
+		byte[] bytes  = new byte[(int) f.length()];
+		int offset = 0;
+	    int numRead = 0;
+	    try {
+		    while (offset < bytes.length && (numRead=is.read(bytes, offset, bytes.length-offset)) >= 0) {
+		        offset += numRead;
+		    }
+	
+		    if (offset < bytes.length) {
+		        throw new IOException("Could not completely read file " + f.getName());
+		    }
+	    }
+	    finally {
+	    	if(is != null) is.close();
+	    }
+	    return bytes;
+	}
+	
+	
+	public static String writeBase64ToFile(String base64, String path, String fileName) throws Exception {
+		byte[] bs = Base64.getDecoder().decode(base64);		
+		File dir = new File(path);
+		if(!dir.exists()) {			
+			dir.mkdirs();
+		}		
+		if(path.endsWith("/")) {
+			path = path.substring(0, path.length()-1);
+		}
+		Path destinationFile = Paths.get(path, fileName);
+		Files.write(destinationFile, bs);
+		return path + "/" + fileName;
+	}
+	
 }
