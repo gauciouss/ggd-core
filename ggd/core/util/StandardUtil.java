@@ -427,7 +427,7 @@ public class StandardUtil {
 	}
 	
 	
-	public static String writeBase64ToFile(String base64, String path, String fileName) throws Exception {
+	public static String writeBase64ToFile(String base64, String path, String fileName) throws IOException {
 		byte[] bs = Base64.getDecoder().decode(base64);		
 		File dir = new File(path);
 		if(!dir.exists()) {			
