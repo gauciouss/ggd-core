@@ -88,20 +88,8 @@ public class CodeMsg {
 	public static final String JO_100 = "JO-100";
 	
 	
-	/**
-	 * String M0-001
-	 */
-	public static final String MAIN_001 = "M0-001";
-	
-	/**
-	 * String M0-002
-	 */
-	public static final String MAIN_002 = "M0-002";
-	
-	/*
-	 * String U_001
-	 */
-	public static final String UM_001 = "UM_001";
+	public static final String MO_001 = "MO-001";
+	public static final String MO_002 = "MO-002";
 	
 	
 	private static final Map<String, String> map = new HashMap<String, String>();
@@ -119,6 +107,8 @@ public class CodeMsg {
 		//JSON COntroller的代碼設定
 		map.put(JO_001, "JSON Controller出現錯誤.");
 		map.put(JO_100, "JSON UTIL錯誤.");
+		map.put(MO_001, "序號錯誤");
+		map.put(MO_002, "密碼尚未設定");
 		
 	}
 
